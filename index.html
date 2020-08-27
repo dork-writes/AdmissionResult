@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>The window object</title>
+        <style>
+            body{
+                margin-top: 4cm;
+                margin-bottom: auto;
+                background-image: url("https://img.wallpapersafari.com/desktop/1366/768/92/86/vwAx8T.jpg");
+                background-attachment: fixed;
+                background-repeat: no-repeat;
+                background-size: cover;
+            }
+            div#bc{
+                display: block;
+                margin-left: auto;
+                margin-right: auto;
+                margin-top: auto;
+                margin-bottom: auto;
+                width: 50%;
+                height: 70%;
+                border: 2px solid white;
+                background-color:rgb(25, 102, 25);
+                padding:50px 50px;
+            }
+            #button:active{
+                background-color: white;
+                color:black;
+                border: 5px solid white;
+            }
+            h1 {
+                color: rgb(255, 255, 255);
+                padding: 4px;
+                border: 2px solid rgb(255, 255, 255);
+                background-color:rgb(25, 102, 25);
+                text-align: center;
+                margin-left:auto;
+                margin-right: auto;
+                display:block;
+                width: 90%;
+            }
+            div#e{
+                text-align: center;
+                display:block;
+                margin-left: auto;
+                margin-right:auto;
+                margin-top: 100px;
+            
+            }
+            div#info{
+                text-align: left;
+                width: 950px;
+                display:block;
+                margin-left: auto;
+                margin-right: auto;
+                margin-top: 40px;
+            }
+            
+            #button{
+                margin-top: 50px;
+                color:white;
+                margin-left: auto;
+                margin-right: auto;
+                display:block;
+                width:10%;
+                background-color: rgb(25, 102, 25);
+                border: 1px solid rgb(255, 255, 255);
+            }
+            input {
+                background-color: rgb(25, 102, 25);
+                border: 1px solid white;
+                text-align: center;
+                color: white;
+            }
+        </style>
+    </head>
+    <body>
+        <div id = "bc">
+            <h1>Applicant   Result Status</h1>
+            <div id = "e">
+                <label>Your ARN: <input id = "input" type = "number"> </label></div>
+                 <button id = "button">Enter</button>
+        
+            <div id="info"></div>
+        
+            <script>
+                var button = document.getElementById("button");
+                var infoDiv = document.getElementById("info");
+                var onEnterClick = function() {
+                    var input = document.getElementById("input").value;
+                    if (input === "2003941"){
+                        infoDiv.innerHTML = "We're sorry to inform you that you are no longer eligiblie to apply, " + input;
+                    }
+                    else if(input.length < 7 || input.length > 7){
+                        infoDiv.innerHTML = "Invalid ARN detected.";
+                    }
+                    else{
+                        infoDiv.innerHTML = "Your result is pending, " + input;
+                    }
+                };
+                button.addEventListener("click", onEnterClick);
+            </script>
+        </div>
+    </body>
+</html>
